@@ -1,7 +1,6 @@
 package com.ritvikkar.bandwith;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         if (!isFormValid()) {
             return;
         }
-
         showProgressDialog();
 
 //        firebaseAuth.createUserWithEmailAndPassword(etEmail.getText().toString(), etPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -117,16 +115,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isFormValid() {
-        if (TextUtils.isEmpty(etEmail.getText())) {
-            etEmail.setError("The email cannot be empty");
+        if (TextUtils.isEmpty(etEmail.getText()) || !android.util.Patterns.EMAIL_ADDRESS.matcher(etEmail.getText()).matches()) {
+            etEmail.setError("Not a valid email");
             return false;
         }
-
         if (TextUtils.isEmpty(etPassword.getText())) {
             etPassword.setError("The password cannot be empty");
             return false;
         }
-
         return true;
     }
 }
