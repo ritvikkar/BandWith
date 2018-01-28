@@ -170,7 +170,7 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="15dp"
-                android:text="Confirm Password"
+                android:text="Confirm"
                 android:textSize="12sp"
                 android:textColor="@color/clear_blue"/>
         </RelativeLayout>

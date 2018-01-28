@@ -85,9 +85,9 @@ public class SignUpActivity extends AppCompatActivity {
         etName.setHintTextColor(getResources().getColor(R.color.powder_blue));
         etEmail.setHint("Email");
         etEmail.setHintTextColor(getResources().getColor(R.color.powder_blue));
-        etPassword.setHint("Password Password");
+        etPassword.setHint("Password");
         etPassword.setHintTextColor(getResources().getColor(R.color.powder_blue));
-        etConfirmPassword.setHint("Confirm");
+        etConfirmPassword.setHint("Confirm Password");
         etConfirmPassword.setHintTextColor(getResources().getColor(R.color.powder_blue));
 
         layoutSignUp.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
