@@ -30,12 +30,9 @@
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:background="@drawable/text_box"
-            android:imeOptions="actionDone"
-            android:inputType="textCapWords"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:textColor="@color/clear_blue"
-            android:textCursorDrawable="@drawable/cursor"
             android:textSize="16sp" >
             <RelativeLayout
                 android:id="@+id/rlImages"

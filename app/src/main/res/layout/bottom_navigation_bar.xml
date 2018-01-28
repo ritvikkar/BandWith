@@ -18,14 +18,14 @@
         android:background="@color/denim">
 
         <ImageView
-            android:id="@+id/ivMovies"
+            android:id="@+id/ivHome"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/tvMovies"
+            android:id="@+id/tvHome"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -45,7 +45,7 @@
 
 
         <ImageView
-            android:id="@+id/ivTVShows"
+            android:id="@+id/ivJobs"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
@@ -53,7 +53,7 @@
 
 
         <TextView
-            android:id="@+id/tvTvShows"
+            android:id="@+id/tvJobs"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
