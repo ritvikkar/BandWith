@@ -13,12 +13,12 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_centerHorizontal="true"
-        android:progress="2"
+        android:progress="1"
         android:max="6"
         android:progressDrawable="@drawable/progress_bar"/>
 
     <TextView
-        android:id="@+id/tvLocations"
+        android:id="@+id/tvTalents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -26,17 +26,17 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/clear_blue"
-        android:text="LOCATIONS"/>
+        android:text="TALENTS"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_below="@+id/tvLocations"
+        android:layout_below="@+id/tvTalents"
         android:layout_marginTop="30dp"
         android:background="@android:color/white">
 
         <EditText
-            android:id="@+id/etLocations"
+            android:id="@+id/etTalents"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
@@ -52,10 +52,10 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvLocation1"
+            android:id="@+id/tvTalent1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@+id/etLocations"
+            android:layout_below="@+id/etTalents"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="-3dp"
@@ -63,14 +63,14 @@
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="Location"
+            android:text="Talent"
             android:textColor="@color/clear_blue"
             android:textSize="16sp" />
         <TextView
-            android:id="@+id/tvLocation2"
+            android:id="@+id/tvTalent2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@+id/tvLocation1"
+            android:layout_below="@+id/tvTalent1"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="-3dp"
@@ -78,14 +78,14 @@
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="Location"
+            android:text="Talent"
             android:textColor="@color/clear_blue"
             android:textSize="16sp" />
         <TextView
-            android:id="@+id/tvLocation3"
+            android:id="@+id/tvTalent3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@+id/tvLocation2"
+            android:layout_below="@+id/tvTalent2"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="-3dp"
@@ -93,14 +93,14 @@
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="Location"
+            android:text="Talent"
             android:textColor="@color/clear_blue"
             android:textSize="16sp" />
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btnContinueLocations"
+        android:id="@+id/btnContinueTalents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
