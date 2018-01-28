@@ -38,6 +38,23 @@ public class HomeFragment extends Fragment {
         adapter = new ScreenSlidePagerAdapter(getChildFragmentManager());
         pager.setAdapter(adapter);
         pager.setOffscreenPageLimit(NUM_PAGES);
+
+        rootView.findViewById(R.id.rlLeft).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (pager.getCurrentItem() != 0) {
+                    pager.setCurrentItem(0);
+                }
+            }
+        });
+        rootView.findViewById(R.id.rlRight).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (pager.getCurrentItem() != 1) {
+                    pager.setCurrentItem(1);
+                }
+            }
+        });
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
