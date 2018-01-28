@@ -44,29 +44,28 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnRegister)
     void registerClick() {
-        Log.d("a", "b");
         if (!isFormValid()) {
             return;
         }
 
         showProgressDialog();
 
-//        firebaseAuth.createUserWithEmailAndPassword(etEmail.getText().toString(), etPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//            @Override
-//            public void onComplete(@NonNull Task<AuthResult> task) {
-//                progressDialog.dismiss();
-//
-//                if (task.isSuccessful()) {
-//                    FirebaseUser fbUser = task.getResult().getUser();
-//                    fbUser.updateProfile(new UserProfileChangeRequest.Builder().
-//                            setDisplayName(usernameFromEmail(fbUser.getEmail())).build());
-//                    Toast.makeText(MainActivity.this, "Registration ok", Toast.LENGTH_SHORT).show();
-//                }
-//                else {
-//                    Toast.makeText(MainActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
+        firebaseAuth.createUserWithEmailAndPassword(etEmail.getText().toString(), etPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                progressDialog.dismiss();
+
+                if (task.isSuccessful()) {
+                    FirebaseUser fbUser = task.getResult().getUser();
+                    fbUser.updateProfile(new UserProfileChangeRequest.Builder().
+                            setDisplayName(usernameFromEmail(fbUser.getEmail())).build());
+                    Toast.makeText(MainActivity.this, "Registration ok", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void showProgressDialog() {
@@ -82,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnLogin)
     void loginClock() {
-        Log.d("b", "b");
         if (!isFormValid()) {
             return;
         }
