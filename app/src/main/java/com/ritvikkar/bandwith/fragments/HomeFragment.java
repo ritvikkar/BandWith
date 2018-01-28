@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.ritvikkar.bandwith.R;
 
@@ -23,6 +24,13 @@ public class HomeFragment extends Fragment {
 
     private ViewPager pager;
     private ScreenSlidePagerAdapter adapter;
+    private final static int ABOUT = 0;
+    private final static int TRACKS = 1;
+
+    private View underlineLeft;
+    private View underlineRight;
+    private TextView tvAbout;
+    private TextView tvTracks;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -38,20 +46,42 @@ public class HomeFragment extends Fragment {
         adapter = new ScreenSlidePagerAdapter(getChildFragmentManager());
         pager.setAdapter(adapter);
         pager.setOffscreenPageLimit(NUM_PAGES);
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switchPages(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        underlineLeft = rootView.findViewById(R.id.underlineLeft);
+        underlineRight = rootView.findViewById(R.id.underlineRight);
+        tvAbout = rootView.findViewById(R.id.tvAbout);
+        tvTracks = rootView.findViewById(R.id.tvTracks);
+        switchPages(ABOUT);
 
         rootView.findViewById(R.id.rlLeft).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (pager.getCurrentItem() != 0) {
-                    pager.setCurrentItem(0);
+                if (pager.getCurrentItem() != ABOUT) {
+                    pager.setCurrentItem(ABOUT);
                 }
             }
         });
         rootView.findViewById(R.id.rlRight).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (pager.getCurrentItem() != 1) {
-                    pager.setCurrentItem(1);
+                if (pager.getCurrentItem() != TRACKS) {
+                    pager.setCurrentItem(TRACKS);
                 }
             }
         });
@@ -83,6 +113,23 @@ public class HomeFragment extends Fragment {
         @Override
         public int getCount() {
             return NUM_PAGES;
+        }
+    }
+
+    private void switchPages (int position) {
+        switch (position) {
+            case ABOUT:
+                underlineLeft.setVisibility(View.VISIBLE);
+                underlineRight.setVisibility(View.INVISIBLE);
+                tvAbout.setTextColor(getResources().getColor(R.color.white));
+                tvTracks.setTextColor(getResources().getColor(R.color.powder_blue));
+                break;
+            case TRACKS:
+                underlineLeft.setVisibility(View.INVISIBLE);
+                underlineRight.setVisibility(View.VISIBLE);
+                tvAbout.setTextColor(getResources().getColor(R.color.powder_blue));
+                tvTracks.setTextColor(getResources().getColor(R.color.white));
+                break;
         }
     }
 
