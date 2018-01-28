@@ -24,5 +24,6 @@ public class GenresFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+        ((OnboardingActivity) getActivity()).toggleContinue();
     }
 }

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="clear_blue">#2699FB</color>
-    <color name="powder_blue">#BCE0FD</color>
-    <color name="ice_blue">#F1F9FF</color>
-    <color name="faded_orange">#F47663</color>
-    <color name="white">#FFFFFF</color>
-    <color name="denim">#3D607C</color>
+    <color name="clear_blue">#2699fb</color>
+    <color name="powder_blue">#bce0fd</color>
+    <color name="white">#ffffff</color>
+    <color name="ice_blue">#f1f9ff</color>
+    <color name="faded_orange">#f47663</color>
+    <color name="denim">#3d607c</color>
+    <color name="sky">#7fc4fd</color>
+    <color name="pale_teal">#65bfa6</color>
 </resources>

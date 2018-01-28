@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="20dp"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/clear_blue"
@@ -25,7 +25,7 @@
         android:layout_marginTop="30dp"
         android:background="@android:color/white">
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/etTalents"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -39,67 +39,22 @@
             android:paddingRight="15dp"
             android:textColor="@color/clear_blue"
             android:textCursorDrawable="@drawable/cursor"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
 
-        <TextView
-            android:id="@+id/tvTalent1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_below="@+id/etTalents"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="-3dp"
-            android:background="@drawable/text_box"
-            android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="Talent"
-            android:textColor="@color/clear_blue"
-            android:textSize="16sp" />
-        <TextView
-            android:id="@+id/tvTalent2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/tvTalent1"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="-3dp"
-            android:background="@drawable/text_box"
-            android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="Talent"
-            android:textColor="@color/clear_blue"
-            android:textSize="16sp" />
-        <TextView
-            android:id="@+id/tvTalent3"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/tvTalent2"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="-3dp"
-            android:background="@drawable/text_box"
-            android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="Talent"
-            android:textColor="@color/clear_blue"
-            android:textSize="16sp" />
+            android:weightSum="3">
+
+
+
+        </LinearLayout>
+
 
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/btnContinueTalents"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/continue_botton_margin_bottom"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_button_light"
-        android:textSize="10sp"
-        android:text="Continue"/>
 
 </RelativeLayout>
