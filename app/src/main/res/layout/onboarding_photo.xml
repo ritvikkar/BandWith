@@ -17,11 +17,11 @@
         android:text="@string/profile_photo"/>
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55.35dp"
+        android:layout_height="36.9dp"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/vOnboardingPhotoCenter"
-        android:src="@drawable/common_google_signin_btn_icon_dark"/>
+        android:src="@drawable/ic_upload_blue"/>
 
     <View
         android:id="@+id/vOnboardingPhotoCenter"
@@ -31,10 +31,10 @@
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="39.75dp"
+        android:layout_height="37.2dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/vOnboardingPhotoCenter"
-        android:src="@drawable/common_google_signin_btn_icon_dark"/>
+        android:src="@drawable/ic_camera_blue"/>
 
 </RelativeLayout>

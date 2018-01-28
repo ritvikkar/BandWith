@@ -12,7 +12,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/ic_settings_white"
         android:scaleType="fitXY"/>
 
     <RelativeLayout
@@ -37,12 +37,12 @@
             android:layout_below="@+id/ivImageHome">
             <ImageView
                 android:id="@+id/ivEmailHome"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="18dp"
                 android:layout_marginRight="20dp"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/llNameHome"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/ic_mail_white"
                 android:scaleType="fitXY"/>
             <LinearLayout
                 android:id="@+id/llNameHome"
@@ -66,12 +66,12 @@
             </LinearLayout>
             <ImageView
                 android:id="@+id/tvPhoneHome"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_marginLeft="20dp"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/llNameHome"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/ic_phone_white"
                 android:scaleType="fitXY"/>
         </RelativeLayout>
     </RelativeLayout>
