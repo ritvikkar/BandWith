@@ -5,19 +5,15 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Color;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -127,13 +123,14 @@ public class SignUpActivity extends AppCompatActivity {
                     createUser(fbUser.getUid(), fbUser.getEmail());
                     fbUser.updateProfile(new UserProfileChangeRequest.Builder().
                             setDisplayName(etName.getText().toString()).build());
+                    ((MainApplication) getApplication()).openRealm();
                     Realm realm = ((MainApplication) getApplication()).getRealmItem();
                     realm.beginTransaction();
                     UserAccount account = realm.createObject(UserAccount.class, fbUser.getUid());
                     account.setEmail(fbUser.getEmail());
                     account.setPassword(etPassword.getText().toString());
                     realm.commitTransaction();
-                    Toast.makeText(SignUpActivity.this, "Registration ok", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(SignUpActivity.this, OnboardingActivity.class));
                 }
                 else {
                     Toast.makeText(SignUpActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -165,15 +162,11 @@ public class SignUpActivity extends AppCompatActivity {
             etEmail.setError("Not a valid email");
             return false;
         }
-        if (TextUtils.isEmpty(etPassword.getText())) {
-            etPassword.setError("The password cannot be empty");
+        if (etPassword.getText().length() < 6) {
+            etPassword.setError("The password must be at least 6 characters long");
             return false;
         }
-        if (etConfirmPassword.getText().length() < 6) {
-            etConfirmPassword.setError("The password must be at least 6 characters long");
-            return false;
-        }
-        if (!etPassword.getText().equals(etConfirmPassword.getText())) {
+        if (!etPassword.getText().toString().equals(etConfirmPassword.getText().toString())) {
             etPassword.setError("Passwords don't match");
             etConfirmPassword.setText("");
             return false;
@@ -278,5 +271,11 @@ public class SignUpActivity extends AppCompatActivity {
                 imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        ((MainApplication) getApplication()).closeRealm();
+        super.onDestroy();
     }
 }

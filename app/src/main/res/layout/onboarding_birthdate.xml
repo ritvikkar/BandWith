@@ -23,7 +23,7 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/clear_blue"
-        android:text="DATE OF BIRTH"/>
+        android:text="@string/date_of_birth"/>
     
     <View
         android:id="@+id/vOnboardingBirthdateCenter"
@@ -45,10 +45,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/vOnboardingBirthdateCenter"
-        android:text="Wed, Aug 20 1997"
+        android:text="Pick Date"
         android:textSize="18sp"
         android:textColor="@color/clear_blue"
-        android:onClick="showDatePicker" />
+        android:onClick="showDatePicker"/>
 
     <View
         android:layout_width="170dp"
@@ -57,5 +57,22 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tvDate"
         android:background="@color/powder_blue" />
+
+    <View
+        android:id="@+id/vOnboardingBirthdateBottom"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true" />
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/vOnboardingBirthdateBottom"
+        android:layout_margin="16dp"
+        android:text="@string/birth_continue"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button"/>
 
 </RelativeLayout>
