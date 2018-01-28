@@ -134,7 +134,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_button_light"
+        android:background="@drawable/rounded_button"
         android:textSize="10sp"
         android:text="Confirm"/>
 
