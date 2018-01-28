@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,10 +9,63 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:layout_marginTop="40dp"
+        android:layout_marginBottom="80dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:layout_centerHorizontal="true"
         android:progress="2"
         android:max="6"
         android:progressDrawable="@drawable/progress_bar"/>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tvLocations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/clear_blue"
+        android:text="LOCATIONS"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/tvLocations"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white">
+        <EditText
+            android:id="@+id/etLocations"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="75dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:imeOptions="actionDone"
+            android:textColor="@color/clear_blue"
+            android:background="@drawable/text_box"
+            android:inputType="textPassword"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/continue_botton_margin_bottom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_button_light"
+        android:textSize="10sp"
+        android:text="Continue"/>
+
+</RelativeLayout>
