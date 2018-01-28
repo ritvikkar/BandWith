@@ -13,7 +13,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_centerHorizontal="true"
-        android:progress="2"
+        android:progress="5"
         android:max="6"
         android:progressDrawable="@drawable/progress_bar"/>
 
