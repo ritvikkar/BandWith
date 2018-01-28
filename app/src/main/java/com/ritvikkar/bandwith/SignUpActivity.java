@@ -178,10 +178,12 @@ public class SignUpActivity extends AppCompatActivity {
     public void onNameClick() {
         if (etName.hasFocus()) {
             etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+            etName.setHint("");
             tvName.setVisibility(View.VISIBLE);
         }
         else if (etName.getText().toString().equals("")) {
             etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+            etName.setHint("Full Name");
             tvName.setVisibility(View.INVISIBLE);
         }
     }
@@ -190,10 +192,12 @@ public class SignUpActivity extends AppCompatActivity {
     public void onEmailClick() {
         if (etEmail.hasFocus()) {
             etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+            etEmail.setHint("");
             tvEmail.setVisibility(View.VISIBLE);
         }
         else if (etEmail.getText().toString().equals("")) {
             etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+            etEmail.setHint("Email");
             tvEmail.setVisibility(View.INVISIBLE);
         }
     }
@@ -202,10 +206,12 @@ public class SignUpActivity extends AppCompatActivity {
     public void onPasswordClick() {
         if (etPassword.hasFocus()) {
             etPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+            etPassword.setHint("");
             tvPassword.setVisibility(View.VISIBLE);
         }
         else if (etPassword.getText().toString().equals("")) {
             etPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+            etPassword.setHint("Password");
             tvPassword.setVisibility(View.INVISIBLE);
         }
     }
@@ -214,12 +220,14 @@ public class SignUpActivity extends AppCompatActivity {
     public void onConfirmPasswordClick() {
         if (etConfirmPassword.hasFocus()) {
             etConfirmPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+            etConfirmPassword.setHint("");
             tvConfirmPassword.setVisibility(View.VISIBLE);
 //            translatePage(true);
         }
         else {
             if (etConfirmPassword.getText().toString().equals("")) {
                 etConfirmPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+                etConfirmPassword.setHint("Confirm Password");
                 tvConfirmPassword.setVisibility(View.INVISIBLE);
 //                translatePage(false);
             }
