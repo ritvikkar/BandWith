@@ -1,4 +1,4 @@
-package com.ritvikkar.bandwith;
+package com.ritvikkar.bandwith.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +15,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.ritvikkar.bandwith.OnboardingActivity;
+import com.ritvikkar.bandwith.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -43,6 +46,7 @@ public class ProfilePictureFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         root = view;
         profilePic = view.findViewById(R.id.ivProfilePicOnboarding);
         view.findViewById(R.id.ivOnboardingUpload).setOnClickListener(new View.OnClickListener() {
@@ -83,6 +87,7 @@ public class ProfilePictureFragment extends Fragment {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
+            ((OnboardingActivity) getActivity()).toggleContinue();
             root.findViewById(R.id.ivOnboardingUpload).setVisibility(View.GONE);
             root.findViewById(R.id.ivOnboardingCamera).setVisibility(View.GONE);
             profilePic.setImageBitmap(image);
@@ -90,6 +95,7 @@ public class ProfilePictureFragment extends Fragment {
         if (requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK) {
             galleryAddPic();
             setPic();
+            ((OnboardingActivity) getActivity()).toggleContinue();
             root.findViewById(R.id.ivOnboardingUpload).setVisibility(View.GONE);
             root.findViewById(R.id.ivOnboardingCamera).setVisibility(View.GONE);
         }

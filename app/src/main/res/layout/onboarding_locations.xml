@@ -5,18 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/ice_blue">
 
-    <android.support.v4.widget.ContentLoadingProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="80dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_centerHorizontal="true"
-        android:progress="2"
-        android:max="6"
-        android:progressDrawable="@drawable/progress_bar"/>
-
     <TextView
         android:id="@+id/tvLocations"
         android:layout_width="wrap_content"
