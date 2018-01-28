@@ -1,5 +1,7 @@
 package com.ritvikkar.bandwith;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -73,7 +75,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         setTheme(R.style.AppTheme_Cursor);
 
-        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
+        getWindow().getDecorView().setBackgroundColor(getResources().getColor(R.color.ice_blue));
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -83,9 +85,9 @@ public class SignUpActivity extends AppCompatActivity {
         etName.setHintTextColor(getResources().getColor(R.color.powder_blue));
         etEmail.setHint("Email");
         etEmail.setHintTextColor(getResources().getColor(R.color.powder_blue));
-        etPassword.setHint("Password");
+        etPassword.setHint("Password Password");
         etPassword.setHintTextColor(getResources().getColor(R.color.powder_blue));
-        etConfirmPassword.setHint("Confirm Password");
+        etConfirmPassword.setHint("Confirm");
         etConfirmPassword.setHintTextColor(getResources().getColor(R.color.powder_blue));
 
         layoutSignUp.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -186,10 +188,13 @@ public class SignUpActivity extends AppCompatActivity {
             etName.setHint("");
             tvName.setVisibility(View.VISIBLE);
         }
-        else if (etName.getText().toString().equals("")) {
-            etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
-            etName.setHint("Full Name");
-            tvName.setVisibility(View.INVISIBLE);
+        else {
+            if (etName.getText().toString().equals("")) {
+                etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+                etName.setHint("Full Name");
+                tvName.setVisibility(View.INVISIBLE);
+            }
+            etName.setSelection(0);
         }
     }
 
@@ -200,10 +205,13 @@ public class SignUpActivity extends AppCompatActivity {
             etEmail.setHint("");
             tvEmail.setVisibility(View.VISIBLE);
         }
-        else if (etEmail.getText().toString().equals("")) {
-            etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
-            etEmail.setHint("Email");
-            tvEmail.setVisibility(View.INVISIBLE);
+        else {
+            if (etEmail.getText().toString().equals("")) {
+                etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+                etEmail.setHint("Email");
+                tvEmail.setVisibility(View.INVISIBLE);
+            }
+            etEmail.setSelection(0);
         }
     }
 
@@ -214,10 +222,13 @@ public class SignUpActivity extends AppCompatActivity {
             etPassword.setHint("");
             tvPassword.setVisibility(View.VISIBLE);
         }
-        else if (etPassword.getText().toString().equals("")) {
-            etPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
-            etPassword.setHint("Password");
-            tvPassword.setVisibility(View.INVISIBLE);
+        else {
+            if (etPassword.getText().toString().equals("")) {
+                etPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+                etPassword.setHint("Password");
+                tvPassword.setVisibility(View.INVISIBLE);
+            }
+            etPassword.setSelection(0);
         }
     }
 
@@ -236,16 +247,25 @@ public class SignUpActivity extends AppCompatActivity {
                 tvConfirmPassword.setVisibility(View.INVISIBLE);
                 translatePage(false);
             }
+            etConfirmPassword.setSelection(0);
+            translatePage(false);
         }
     }
 
     private void translatePage(boolean up) {
-        float translateHeight = -height / (float) 29;
+        float translateHeight = -height / 44;
         if (!up) {
             translateHeight = 0;
         }
         ObjectAnimator animator = ObjectAnimator.ofFloat(layoutSignUp, "y", translateHeight);
         animator.setDuration(400);
+        final float finalTranslateHeight = translateHeight;
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+            }
+        });
         animator.start();
     }
 
