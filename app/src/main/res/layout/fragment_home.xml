@@ -8,88 +8,10 @@
 
     <include layout="@layout/top_navigation_bar" />
 
-    <LinearLayout
+    <com.ritvikkar.bandwith.NoSwipeViewPager
+        android:id="@+id/vpHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="7"
-        android:orientation="vertical"
-        android:background="@color/sky">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.1">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white"
-                android:alpha="0.2"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/clear_blue"
-                android:layout_centerInParent="true"
-                android:text="Keyboard, Vocals, Base Guitar" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.1">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white"
-                android:alpha="0.4"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/clear_blue"
-                android:layout_centerInParent="true"
-                android:text="Pop, Rock, Punk Rock"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.1">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white"
-                android:alpha="0.6"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/clear_blue"
-                android:layout_centerInParent="true"
-                android:text="San Francisco, Minneapolis"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.1">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white"
-                android:alpha="0.8"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/clear_blue"
-                android:layout_centerInParent="true"
-                android:text="* * *"/>
-        </RelativeLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2.6"
-            android:textColor="@color/white"
-            android:gravity="center"
-            android:text="* * * "/>
-    </LinearLayout>
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>

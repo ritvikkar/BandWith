@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     startActivity(new Intent(MainActivity.this, OnboardingActivity.class));
                     finish();
+
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    finish();
                 }
                 else {
                     Toast.makeText(MainActivity.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
