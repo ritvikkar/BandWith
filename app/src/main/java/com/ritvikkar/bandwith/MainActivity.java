@@ -32,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.landing_page);
 
-//        startActivity(new Intent(MainActivity.this, HomeActivity.class));
-//        finish();
-
         ((MainApplication) getApplication()).openRealm();
         Realm realm = ((MainApplication) getApplication()).getRealmItem();
         UserAccount account = realm.where(UserAccount.class).findFirst();
