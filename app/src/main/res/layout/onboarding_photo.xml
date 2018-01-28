@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="20dp"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/clear_blue"
@@ -20,13 +20,20 @@
         android:layout_width="55.35dp"
         android:layout_height="36.9dp"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/vOnboardingPhotoCenter"
-        android:src="@drawable/ic_upload_blue"/>
+        android:layout_above="@+id/vcOnboardingCenter"
+        android:src="@drawable/ic_upload_blue"
+        android:id="@+id/ivOnboardingUpload"/>
 
     <View
-        android:id="@+id/vOnboardingPhotoCenter"
+        android:id="@+id/vcOnboardingCenter"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/ivProfilePicOnboarding"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerInParent="true"/>
 
 
@@ -34,7 +41,8 @@
         android:layout_width="39.75dp"
         android:layout_height="37.2dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/vOnboardingPhotoCenter"
-        android:src="@drawable/ic_camera_blue"/>
+        android:src="@drawable/ic_camera_blue"
+        android:id="@+id/ivOnboardingCamera"
+        android:layout_below="@+id/vcOnboardingCenter" />
 
 </RelativeLayout>

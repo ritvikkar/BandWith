@@ -1,7 +1,6 @@
 package com.ritvikkar.bandwith;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,14 +14,15 @@ import butterknife.OnClick;
 
 public class OnboardingActivity extends AppCompatActivity {
 
-    public static final int NUM_PAGES = 1;
+    public static final int NUM_PAGES = 2;
 
     ViewPager pager;
     MainPagerAdapter adapter;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.onboarding);
 
         pager = findViewById(R.id.vpOnboarding);
@@ -37,10 +37,12 @@ public class OnboardingActivity extends AppCompatActivity {
 
         MainPagerAdapter(FragmentManager fm) {
             super(fm);
-            this.screens = new OnboardingFragment[NUM_PAGES];
+            this.screens = new ProfilePictureFragment[NUM_PAGES];
 
-            OnboardingFragment fragment = new OnboardingFragment();
+            ProfilePictureFragment fragment = new ProfilePictureFragment();
             fragment.setRetainInstance(true);
+
+            
 
             this.screens[0] = fragment;
         }
@@ -58,7 +60,6 @@ public class OnboardingActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnContinueOnboarding)
     void continueBoarding() {
-        // advance viewPager
-        // advance status bar sometimes
+        pager.setCurrentItem(pager.getCurrentItem() + 1);
     }
 }
