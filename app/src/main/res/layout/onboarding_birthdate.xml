@@ -10,10 +10,10 @@
 
     <ImageView
         android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_margin="16dp"
-        android:src="@drawable/common_google_signin_btn_icon_dark" />
+        android:src="@drawable/ic_back" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,11 +32,11 @@
         android:layout_height="32dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="32.48dp"
+        android:layout_height="34.8dp"
         android:layout_centerInParent="true"
         android:layout_above="@+id/vOnboardingBirthdateCenter"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/onboardingcalendar"
         android:onClick="showDatePicker" />
     
     <TextView

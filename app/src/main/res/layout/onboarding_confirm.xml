@@ -43,11 +43,11 @@
                 <ImageView
                     android:id="@+id/ivEmail"
                     android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_height="24dp"
                     android:layout_marginRight="20dp"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/ivImageConfirm"
-                    android:src="@drawable/rounded_button"
+                    android:src="@drawable/ic_mail_blue"
                     android:scaleType="fitXY"/>
                 <ImageView
                     android:id="@+id/ivImageConfirm"
@@ -63,7 +63,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/ivImageConfirm"
-                    android:src="@drawable/rounded_button"
+                    android:src="@drawable/ic_phone_blue"
                     android:scaleType="fitXY"/>
             </RelativeLayout>
             <LinearLayout
