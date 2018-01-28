@@ -30,10 +30,10 @@
         android:layout_height="50dp"
         android:layout_centerInParent="true"/>
 
-    <ImageView
+    <com.ritvikkar.bandwith.RoundedImageView
         android:id="@+id/ivProfilePicOnboarding"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         android:layout_centerInParent="true"/>
 
 
