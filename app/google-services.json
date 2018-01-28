@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "786267790637",
+    "firebase_url": "https://bandwith-63777.firebaseio.com",
+    "project_id": "bandwith-63777",
+    "storage_bucket": "bandwith-63777.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786267790637:android:5876476aef6c5c2c",
+        "android_client_info": {
+          "package_name": "com.ritvikkar.bandwith"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786267790637-310ruiklsishb5t94ctgq889t76nevmm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ritvikkar.bandwith",
+            "certificate_hash": "e82bb761f526697704b05a688ed4d4fa8ad6e4f0"
+          }
+        },
+        {
+          "client_id": "786267790637-47vtgvoi7q6rs1n0c5treddo2f1p6co9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPWhNiXUcGYZQ0qFhZtNHe2FNc6wnNvaI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786267790637-47vtgvoi7q6rs1n0c5treddo2f1p6co9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
