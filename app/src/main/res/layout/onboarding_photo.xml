@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/background_dob_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/clear_blue"
+        android:text="@string/profile_photo"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/vOnboardingPhotoCenter"
+        android:src="@drawable/common_google_signin_btn_icon_dark"/>
+
+    <View
+        android:id="@+id/vOnboardingPhotoCenter"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"/>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/vOnboardingPhotoCenter"
+        android:src="@drawable/common_google_signin_btn_icon_dark"/>
+
+</RelativeLayout>
