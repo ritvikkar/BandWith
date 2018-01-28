@@ -78,7 +78,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/rlInfo"
         android:orientation="horizontal"
         android:weightSum="2">
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/underlineLeft"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:text="About"
                 android:textColor="@color/white"/>
 
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/underlineRight"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:text="Tracks"
                 android:textColor="@color/powder_blue" />
 
