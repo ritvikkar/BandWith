@@ -25,7 +25,7 @@ public class OnboardingActivity extends FragmentActivity {
 
     public static final int NUM_PAGES = 5;
 
-    @BindView(R.id.btnContinue)
+    @BindView(R.id.btnContinueOnboarding)
     Button btnContinue;
 
     NoSwipeViewPager pager;
@@ -38,12 +38,13 @@ public class OnboardingActivity extends FragmentActivity {
 
         setContentView(R.layout.onboarding);
 
+        ButterKnife.bind(this);
+
         pager = findViewById(R.id.vpOnboarding);
         progressBar = findViewById(R.id.pbOnloading);
         adapter = new MainPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
         toggleContinue();
-        ButterKnife.bind(this);
     }
 
     private class MainPagerAdapter extends FragmentStatePagerAdapter {
