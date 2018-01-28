@@ -1,7 +1,9 @@
 package com.ritvikkar.bandwith;
 
+import android.animation.ObjectAnimator;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -69,6 +72,8 @@ public class SignUpActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setTheme(R.style.AppTheme_Cursor);
+
+        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -222,32 +227,26 @@ public class SignUpActivity extends AppCompatActivity {
             etConfirmPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
             etConfirmPassword.setHint("");
             tvConfirmPassword.setVisibility(View.VISIBLE);
-//            translatePage(true);
+            translatePage(true);
         }
         else {
             if (etConfirmPassword.getText().toString().equals("")) {
                 etConfirmPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
                 etConfirmPassword.setHint("Confirm Password");
                 tvConfirmPassword.setVisibility(View.INVISIBLE);
-//                translatePage(false);
+                translatePage(false);
             }
         }
     }
 
     private void translatePage(boolean up) {
-        float translateHeight = -height / 28;
-        float yDelta = 0;
+        float translateHeight = -height / (float) 29;
         if (!up) {
             translateHeight = 0;
-            yDelta = -height / 28;
         }
-        TranslateAnimation anim = new TranslateAnimation( 0, 0, yDelta, translateHeight);
-
-        anim.setDuration(400);
-        anim.setFillAfter(true);
-        anim.setFillEnabled(true);
-        anim.setStartOffset(300);
-        layoutSignUp.startAnimation(anim);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(layoutSignUp, "y", translateHeight);
+        animator.setDuration(400);
+        animator.start();
     }
 
     @OnFocusChange(R.id.layoutSignUp)
@@ -260,5 +259,4 @@ public class SignUpActivity extends AppCompatActivity {
             }
         }
     }
-
 }
