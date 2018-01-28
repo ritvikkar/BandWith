@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:background="@color/ice_blue"
+    tools:context="com.ritvikkar.bandwith.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btnRegister">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/band"
+            android:textSize="30sp"
+            android:textColor="@color/clear_blue"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/with"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/clear_blue"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="12dp"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button"/>
+
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnRegister"
+        android:layout_margin="12dp"
+        android:text="@string/log_in"
+        android:textColor="@color/clear_blue"
+        android:background="@drawable/text_box_darker"/>
+
+</RelativeLayout>
