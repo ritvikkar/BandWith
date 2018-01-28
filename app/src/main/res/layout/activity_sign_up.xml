@@ -9,6 +9,8 @@
     tools:context="com.ritvikkar.bandwith.SignUpActivity"
     android:background="@color/ice_blue"
     android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:clickable="true"
     android:id="@+id/layoutSignUp">
 
     <LinearLayout
@@ -58,12 +60,13 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="15dp"
-            android:imeOptions="actionDone"
+            android:imeOptions="actionNext"
             android:textColor="@color/clear_blue"
             android:background="@drawable/text_box"
             android:inputType="text"
             android:textCursorDrawable="@drawable/cursor"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:nextFocusDown="@id/etEmail"/>
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
@@ -72,12 +75,13 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="15dp"
-            android:imeOptions="actionDone"
+            android:imeOptions="actionNext"
             android:textColor="@color/clear_blue"
             android:background="@drawable/text_box"
             android:inputType="text"
             android:textCursorDrawable="@drawable/cursor"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:nextFocusDown="@id/etPassword"/>
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
@@ -86,12 +90,13 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="15dp"
-            android:imeOptions="actionDone"
+            android:imeOptions="actionNext"
             android:textColor="@color/clear_blue"
             android:background="@drawable/text_box"
             android:inputType="textPassword"
             android:textCursorDrawable="@drawable/cursor"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:nextFocusDown="@id/etConfirmPassword"/>
         <EditText
             android:id="@+id/etConfirmPassword"
             android:layout_width="match_parent"

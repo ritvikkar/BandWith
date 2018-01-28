@@ -4,10 +4,12 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
+import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -31,6 +33,8 @@ public class SignUpActivity extends AppCompatActivity {
     @BindView(R.id.layoutSignUp)
     LinearLayout layoutSignUp;
 
+    private float height;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,10 @@ public class SignUpActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setTheme(R.style.AppTheme_Cursor);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        height = displayMetrics.heightPixels;
 
         etName.setHint("Full Name");
         etName.setHintTextColor(getResources().getColor(R.color.powder_blue));
@@ -68,12 +76,18 @@ public class SignUpActivity extends AppCompatActivity {
         if (etName.hasFocus()) {
             etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
         }
+        else if (etName.getText().toString().equals("")) {
+            etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+        }
     }
 
     @OnFocusChange(R.id.etEmail)
     public void onEmailClick() {
         if (etEmail.hasFocus()) {
             etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+        }
+        else if (etEmail.getText().toString().equals("")) {
+            etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
         }
     }
 
@@ -82,19 +96,44 @@ public class SignUpActivity extends AppCompatActivity {
         if (etPassword.hasFocus()) {
             etPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
         }
+        else if (etPassword.getText().toString().equals("")) {
+            etPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+        }
     }
 
     @OnFocusChange(R.id.etConfirmPassword)
     public void onConfirmPasswordClick() {
         if (etConfirmPassword.hasFocus()) {
             etConfirmPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+//            layoutSignUp.setTranslationY(-height / 10);
+            translatePage(true);
+        }
+        else {
+            if (etConfirmPassword.getText().toString().equals("")) {
+                etConfirmPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+                translatePage(false);
+            }
         }
     }
 
+    private void translatePage(boolean up) {
+        float translateHeight = -height / 10;
+        float yDelta = 0;
+        if (!up) {
+            translateHeight = 0;
+            yDelta = -height / 10;
+        }
+        TranslateAnimation anim = new TranslateAnimation( 0, 0, yDelta, translateHeight);
+
+        anim.setDuration(300);
+        anim.setFillAfter(true);
+        anim.setStartOffset(300);
+        layoutSignUp.startAnimation(anim);
+    }
+
     @OnFocusChange(R.id.layoutSignUp)
-    public void layoutClicked() {
+    public void onLayoutClick() {
         if (layoutSignUp.hasFocus()) {
-            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
             View view = this.getCurrentFocus();
             if (view != null) {
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -102,4 +141,5 @@ public class SignUpActivity extends AppCompatActivity {
             }
         }
     }
+
 }
