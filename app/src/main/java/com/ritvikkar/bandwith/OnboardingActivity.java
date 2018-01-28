@@ -3,6 +3,7 @@ package com.ritvikkar.bandwith;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -12,9 +13,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class OnboardingActivity extends AppCompatActivity {
+public class OnboardingActivity extends FragmentActivity {
 
-    public static final int NUM_PAGES = 2;
+    public static final int NUM_PAGES = 1;
 
     ViewPager pager;
     MainPagerAdapter adapter;
@@ -41,8 +42,6 @@ public class OnboardingActivity extends AppCompatActivity {
 
             ProfilePictureFragment fragment = new ProfilePictureFragment();
             fragment.setRetainInstance(true);
-
-            
 
             this.screens[0] = fragment;
         }
