@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ice_blue">
+
+    <android.support.v4.widget.ContentLoadingProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerHorizontal="true"
+        android:progress="6"
+        android:max="6"
+        android:progressDrawable="@drawable/progress_bar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="110dp"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:background="@drawable/text_box"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textColor="@color/clear_blue"
+            android:textCursorDrawable="@drawable/cursor"
+            android:textSize="16sp" >
+            <RelativeLayout
+                android:id="@+id/rlImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true">
+                <ImageView
+                    android:id="@+id/ivEmail"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ivImageConfirm"
+                    android:src="@drawable/rounded_button"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/ivImageConfirm"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/rounded_button"
+                    android:scaleType="fitXY"/>
+                <ImageView
+                    android:id="@+id/tvPhone"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ivImageConfirm"
+                    android:src="@drawable/rounded_button"
+                    android:scaleType="fitXY"/>
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/llName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlImages"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RITVIK "
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/clear_blue"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KAR"
+                    android:textSize="20sp"
+                    android:textColor="@color/clear_blue"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tvTalentsConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llName"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp"
+                android:textColor="@color/clear_blue"
+                android:text="Keyboard, Vocals, Base Guitar"/>
+            <TextView
+                android:id="@+id/tvGenresConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTalentsConfirm"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp"
+                android:textColor="@color/clear_blue"
+                android:text="Pop, Rock, Punk Rock"/>
+            <TextView
+                android:id="@+id/tvLocationsConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvGenresConfirm"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp"
+                android:textColor="@color/clear_blue"
+                android:text="San Francisco, Minneapolis"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/continue_botton_margin_bottom"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_button_light"
+        android:textSize="10sp"
+        android:text="Confirm"/>
+
+</RelativeLayout>
