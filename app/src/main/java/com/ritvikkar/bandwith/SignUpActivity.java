@@ -32,6 +32,14 @@ public class SignUpActivity extends AppCompatActivity {
     EditText etConfirmPassword;
     @BindView(R.id.layoutSignUp)
     LinearLayout layoutSignUp;
+    @BindView(R.id.tvName)
+    TextView tvName;
+    @BindView(R.id.tvEmail)
+    TextView tvEmail;
+    @BindView(R.id.tvPassword)
+    TextView tvPassword;
+    @BindView(R.id.tvConfirmPassword)
+    TextView tvConfirmPassword;
 
     private float height;
 
@@ -75,9 +83,11 @@ public class SignUpActivity extends AppCompatActivity {
     public void onNameClick() {
         if (etName.hasFocus()) {
             etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+            tvName.setVisibility(View.VISIBLE);
         }
         else if (etName.getText().toString().equals("")) {
             etName.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+            tvName.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -85,9 +95,11 @@ public class SignUpActivity extends AppCompatActivity {
     public void onEmailClick() {
         if (etEmail.hasFocus()) {
             etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+            tvEmail.setVisibility(View.VISIBLE);
         }
         else if (etEmail.getText().toString().equals("")) {
             etEmail.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+            tvEmail.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -95,9 +107,11 @@ public class SignUpActivity extends AppCompatActivity {
     public void onPasswordClick() {
         if (etPassword.hasFocus()) {
             etPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
+            tvPassword.setVisibility(View.VISIBLE);
         }
         else if (etPassword.getText().toString().equals("")) {
             etPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
+            tvPassword.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -105,28 +119,30 @@ public class SignUpActivity extends AppCompatActivity {
     public void onConfirmPasswordClick() {
         if (etConfirmPassword.hasFocus()) {
             etConfirmPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_darker));
-//            layoutSignUp.setTranslationY(-height / 10);
-            translatePage(true);
+            tvConfirmPassword.setVisibility(View.VISIBLE);
+//            translatePage(true);
         }
         else {
             if (etConfirmPassword.getText().toString().equals("")) {
                 etConfirmPassword.setBackgroundDrawable(getResources().getDrawable(R.drawable.text_box_error));
-                translatePage(false);
+                tvConfirmPassword.setVisibility(View.INVISIBLE);
+//                translatePage(false);
             }
         }
     }
 
     private void translatePage(boolean up) {
-        float translateHeight = -height / 10;
+        float translateHeight = -height / 28;
         float yDelta = 0;
         if (!up) {
             translateHeight = 0;
-            yDelta = -height / 10;
+            yDelta = -height / 28;
         }
         TranslateAnimation anim = new TranslateAnimation( 0, 0, yDelta, translateHeight);
 
-        anim.setDuration(300);
+        anim.setDuration(400);
         anim.setFillAfter(true);
+        anim.setFillEnabled(true);
         anim.setStartOffset(300);
         layoutSignUp.startAnimation(anim);
     }

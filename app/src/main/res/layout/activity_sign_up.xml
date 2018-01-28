@@ -52,65 +52,125 @@
             android:textColor="@color/clear_blue"
             android:textStyle="bold"
             android:text="Create an Account"/>
-        <EditText
-            android:id="@+id/etName"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingLeft="15dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="15dp"
-            android:imeOptions="actionNext"
-            android:textColor="@color/clear_blue"
-            android:background="@drawable/text_box"
-            android:inputType="text"
-            android:textCursorDrawable="@drawable/cursor"
-            android:textSize="14sp"
-            android:nextFocusDown="@id/etEmail"/>
-        <EditText
-            android:id="@+id/etEmail"
+            android:layout_marginBottom="15dp">
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="15dp"
+                android:imeOptions="actionNext"
+                android:textColor="@color/clear_blue"
+                android:background="@drawable/text_box"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="16sp"
+                android:nextFocusDown="@id/etEmail"/>
+            <TextView
+                android:id="@+id/tvName"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="Full Name"
+                android:textSize="12sp"
+                android:textColor="@color/clear_blue"/>
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingLeft="15dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="15dp"
-            android:imeOptions="actionNext"
-            android:textColor="@color/clear_blue"
-            android:background="@drawable/text_box"
-            android:inputType="text"
-            android:textCursorDrawable="@drawable/cursor"
-            android:textSize="14sp"
-            android:nextFocusDown="@id/etPassword"/>
-        <EditText
-            android:id="@+id/etPassword"
+            android:layout_marginBottom="15dp">
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="15dp"
+                android:imeOptions="actionNext"
+                android:textColor="@color/clear_blue"
+                android:background="@drawable/text_box"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="16sp"
+                android:nextFocusDown="@id/etPassword"/>
+            <TextView
+                android:id="@+id/tvEmail"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="Email"
+                android:textSize="12sp"
+                android:textColor="@color/clear_blue"/>
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingLeft="15dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="15dp"
-            android:imeOptions="actionNext"
-            android:textColor="@color/clear_blue"
-            android:background="@drawable/text_box"
-            android:inputType="textPassword"
-            android:textCursorDrawable="@drawable/cursor"
-            android:textSize="14sp"
-            android:nextFocusDown="@id/etConfirmPassword"/>
-        <EditText
-            android:id="@+id/etConfirmPassword"
+            android:layout_marginBottom="15dp">
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="15dp"
+                android:imeOptions="actionNext"
+                android:textColor="@color/clear_blue"
+                android:background="@drawable/text_box"
+                android:inputType="textPassword"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="16sp"
+                android:nextFocusDown="@id/etConfirmPassword"/>
+            <TextView
+                android:id="@+id/tvPassword"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="Password"
+                android:textSize="12sp"
+                android:textColor="@color/clear_blue"/>
+        </RelativeLayout>
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingLeft="15dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"
-            android:imeOptions="actionDone"
-            android:textColor="@color/clear_blue"
-            android:background="@drawable/text_box"
-            android:inputType="textPassword"
-            android:textCursorDrawable="@drawable/cursor"
-            android:textSize="14sp"/>
+            android:layout_marginBottom="30dp">
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="15dp"
+                android:imeOptions="actionDone"
+                android:textColor="@color/clear_blue"
+                android:background="@drawable/text_box"
+                android:inputType="textPassword"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/tvConfirmPassword"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="Confirm Password"
+                android:textSize="12sp"
+                android:textColor="@color/clear_blue"/>
+        </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
