@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BandWith</string>
+    <string name="band">BAND</string>
+    <string name="with">WITH</string>
+    <string name="register">REGISTER</string>
+    <string name="log_in">LOG IN</string>
+    <string name="birth_continue">CONTINUE</string>
+    <string name="date_of_birth">DATE OF BIRTH</string>
+    <string name="profile_photo">PROFILE PHOTO</string>
 </resources>
