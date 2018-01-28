@@ -28,7 +28,8 @@
         <activity
             android:name=".OnboardingActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity"
+            android:screenOrientation="portrait"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.android.fileprovider"

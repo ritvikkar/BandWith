@@ -4,12 +4,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import com.ritvikkar.bandwith.fragments.HomeFragment;
 import com.ritvikkar.bandwith.fragments.JobFragment;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -19,6 +20,12 @@ public class HomeActivity extends FragmentActivity {
 
     private NoSwipeViewPager pager;
     private MainPagerAdapter adapter;
+
+    @BindView(R.id.llLeft)
+    LinearLayout llLeft;
+
+    @BindView(R.id.llRight)
+    LinearLayout llRight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +47,7 @@ public class HomeActivity extends FragmentActivity {
         MainPagerAdapter(FragmentManager fm) {
             super(fm);
             this.screens = new Fragment[NUM_PAGES];
+
             HomeFragment home = new HomeFragment();
             home.setRetainInstance(true);
 
@@ -65,7 +73,8 @@ public class HomeActivity extends FragmentActivity {
     public void onHome() {
         if (pager.getCurrentItem() != 0) {
             pager.setCurrentItem(0);
-//            ((SearchFragment) adapter.getItem(0)).onShow();
+            llLeft.setBackgroundColor(getResources().getColor(R.color.denim));
+            llRight.setBackgroundColor(getResources().getColor(R.color.clear_blue));
         }
 
     }
@@ -74,8 +83,8 @@ public class HomeActivity extends FragmentActivity {
     public void onJobs() {
         if (pager.getCurrentItem() != 1) {
             pager.setCurrentItem(1);
-//            ((SearchFragment) adapter.getItem(0)).onShow();
-
+            llRight.setBackgroundColor(getResources().getColor(R.color.denim));
+            llLeft.setBackgroundColor(getResources().getColor(R.color.clear_blue));
         }
     }
 }

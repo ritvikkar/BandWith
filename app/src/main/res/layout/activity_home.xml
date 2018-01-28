@@ -8,7 +8,7 @@
     android:id="@+id/layoutContent"
     tools:context="com.ritvikkar.bandwith.HomeActivity">
 
-    <com.pickflix.app.NoSwipeViewPager
+    <com.ritvikkar.bandwith.NoSwipeViewPager
         android:id="@+id/vpMain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
